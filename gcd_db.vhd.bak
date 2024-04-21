@@ -1,0 +1,47 @@
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+Entity gcd_db is
+port( clk,rst: in std_logic;
+       x_in, y_in, go: in std_logic_vector(7 downto 0);
+              d_out: out std_logic_vector(7 downto 0));
+end gcd_db;
+
+Architecture rtl of gcd_db is
+
+component mux2_1
+port(a,b:in std_logic_vector(7 downto 0);
+     s:in std_logic;
+     y: out std_logic_vector(7 downto 0));
+end component;
+
+component reg_par_8bit
+port (clk, rst, load: in std_logic;
+        reg_in: in std_logic_vector(7 downto 0);
+       reg_out: out std_logic_vector(7 downto 0));
+end component;
+
+component comp_greater
+port( a,b :in std_logic_vector (7 downto 0);
+         y: out std_logic);
+end component;
+
+component sub_8bit
+Port ( A, B: in  STD_LOGIC_vector(7 downto 0);
+          D: out std_logic_vector(7 downto 0));
+end component;
+
+component comp_equ
+port( a,b :in std_logic_vector (7 downto 0);
+         y: out std_logic);
+end component;
+
+begin 
+
+
+
+
+end rtl; 
